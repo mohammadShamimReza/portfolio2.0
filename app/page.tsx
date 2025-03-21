@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { FaFileDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdAddLocation } from "react-icons/md";
+import Card from "./components/Card";
 
 // Define the types for the sections
-type Skill = {
-  name: string;
-};
+
 type Job = {
   title: string;
   company: string;
@@ -19,16 +18,11 @@ type Project = {
   liveDemoLink: string;
 };
 
-const skills: Skill[] = [
-  { name: "JavaScript" },
-  { name: "React" },
-  { name: "Next.js" },
-  { name: "Node.js" },
-  { name: "TypeScript" },
-  { name: "TailwindCSS" },
-  { name: "GraphQL" },
-  { name: "MongoDB" },
-];
+type Language = {
+  name: string;
+};
+
+const language: Language[] = [{ name: "JavaScript" }, { name: "TypeScript" }];
 
 const jobs: Job[] = [
   {
@@ -98,8 +92,8 @@ const projects: Project[] = [
 
 const Home = () => {
   return (
-    <div className="bg-stone-900 text-white min-h-screen  ">
-      <div className="max-w-7xl gap-5 mx-auto flex flex-col md:flex-row justify-between overflow-hidden">
+    <div className="bg-stone-900 text-white   ">
+      <div className="max-w-7xl gap-5 mx-auto flex flex-col md:flex-row justify-between ">
         {/* profile section */}
         <div className="w-full md:w-2/5 sticky top-10 z-10 max-h-screen ">
           <div className="mb-12">
@@ -142,7 +136,7 @@ const Home = () => {
 
         <div className="w-full md:w-3/6">
           {/* About Section */}
-          <section className="mb-12">
+          <section className="mt-12">
             <h2 className="text-3xl font-semibold mb-4">About Me</h2>
             <p className="text-gray-400 text-lg">
               I'm a full-stack developer with a passion for building scalable
@@ -150,74 +144,188 @@ const Home = () => {
               complex things simple for users. My expertise spans across various
               technologies such as JavaScript, React, Node.js, and more.
             </p>
+            <br />
+            <p className="text-gray-400 text-lg">
+              Throughout my career, I've been deeply involved in the startup
+              ecosystem. I've worked with various startups, embracing the
+              fast-paced, innovative nature of these environments. This journey
+              led me to found my own startup, where I gained firsthand
+              experience in every aspect of product development and business
+              operations.
+            </p>
+            <br />
+            <p className="text-gray-400 text-lg">
+              During my high school years, I excelled in software development,
+              earning the prestigious title of DUX (top student) in this field.
+              This early achievement laid the foundation for my passion and
+              expertise in programming.
+            </p>
+            <p className="text-gray-400 text-lg">
+              When I'm not immersed in code, you'll find me experimenting in the
+              kitchen or bringing ideas to life with my 3D printer. I'm always
+              creating, whether it's digital products or tangible objects.
+            </p>
           </section>
           {/* Skills Section */}
           <section className="mb-12">
             <h2 className="text-3xl font-semibold mb-4">Skills</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-              {skills.map((skill) => (
-                <span
-                  key={skill.name}
-                  className="px-6 py-3 bg-gray-800 rounded-full text-center text-gray-300"
-                >
-                  {skill.name}
-                </span>
-              ))}
+            <div className="flex flex-wrap gap-4">
+              <div className="mb-4">
+                <h4 className="text-xl font-semibold mb-2 text-gray-200 capitalize">
+                  Fanguages
+                </h4>
+                <div className="flex flex-wrap ">
+                  <span className="inline-block bg-blue-800 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-blue-300 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-blue-800 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-blue-300 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                </div>
+              </div>
+
+              {/* frameworks */}
+
+              <div className="mb-4">
+                <h4 className="text-xl font-semibold mb-2 text-gray-200 capitalize">
+                  Framework
+                </h4>
+                <div className="flex flex-wrap ">
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                </div>
+              </div>
+
+              {/* Backend */}
+
+              <div className="mb-4">
+                <h4 className="text-xl font-semibold mb-2 text-gray-200 capitalize">
+                  Backend
+                </h4>
+                <div className="flex flex-wrap ">
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                </div>
+              </div>
+
+              {/* Database */}
+
+              <div className="mb-4">
+                <h4 className="text-xl font-semibold mb-2 text-gray-200 capitalize">
+                  Framework
+                </h4>
+                <div className="flex flex-wrap ">
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                </div>
+              </div>
+
+              {/* Tools */}
+
+              <div className="mb-4">
+                <h4 className="text-xl font-semibold mb-2 text-gray-200 capitalize">
+                  Framework
+                </h4>
+                <div className="flex flex-wrap ">
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    JavaScript
+                  </span>
+                  <span className="inline-block bg-green-700 bg-opacity-30 px-3 py-1.5 text-xs font-medium text-green-200 mr-2 mb-2 rounded-full">
+                    TypeScript
+                  </span>
+                </div>
+              </div>
             </div>
           </section>
 
           {/* Experience Section */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-4">Experience</h2>
-            <div className="space-y-8">
-              {jobs.map((job) => (
-                <div
-                  key={job.title}
-                  className="bg-gray-900 rounded-lg shadow-lg p-8"
-                >
-                  <h3 className="text-2xl font-semibold">{job.title}</h3>
-                  <p className="text-gray-400">
-                    {job.company} - {job.location}
-                  </p>
-                  <p className="text-gray-400 text-lg mt-4">
-                    {job.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <Card />
 
           {/* Projects Section */}
-          <section className="">
-            <h2 className="text-3xl font-semibold mb-4">Projects</h2>
-            <div className="space-y-8">
-              {projects.map((project) => (
-                <div
-                  key={project.name}
-                  className="bg-gray-900 rounded-lg shadow-lg p-8"
-                >
-                  <h3 className="text-2xl font-semibold">{project.name}</h3>
-                  <p className="text-gray-400 text-lg mt-4">
-                    {project.description}
-                  </p>
-                  <div className="mt-4">
-                    <a
-                      href={project.viewCodeLink}
-                      className="text-blue-400 hover:underline mr-6"
-                    >
-                      View Code
-                    </a>
-                    <a
-                      href={project.liveDemoLink}
-                      className="text-blue-400 hover:underline"
-                    >
-                      Live Demo
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
         </div>
       </div>
     </div>
